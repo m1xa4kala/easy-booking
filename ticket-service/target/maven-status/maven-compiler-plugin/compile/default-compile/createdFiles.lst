@@ -1,0 +1,6 @@
+com\travel\entity\Carrier.class
+com\travel\controller\TicketController.class
+com\travel\entity\Rout.class
+com\travel\Main.class
+com\travel\entity\Ticket.class
+com\travel\entity\User.class
