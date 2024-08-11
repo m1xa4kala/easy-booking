@@ -1,6 +1,6 @@
 import { TicketCard } from '@/entities/ticket'
 
-export const Home = () => {
+export const HomePage = () => {
 	return (
 		<div>
 			<TicketCard

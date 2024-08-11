@@ -1,0 +1,56 @@
+@use '@/app/styles/breakpoints';
+
+.header {
+  display: flex;
+  width: 100%;
+  height: 60px;
+  background-color: #267dff;
+  align-items: center;
+
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 10px;
+    width: 100%;
+    padding: 0 20px;
+  }
+
+  &__logo {
+    grid-column: 1/2;
+  }
+
+  &__title {
+    margin: auto 0;
+    grid-column: 2/10;
+    color: #fff;
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 11/13;
+  }
+}
+
+@media screen and (min-width: breakpoints.$sm) {
+  .header__toggle {
+    grid-column: 12/13;
+  }
+}
+
+@media screen and (min-width: breakpoints.$md) {
+  .header__title {
+    display: block;
+  }
+  .header__toggle {
+    display: none;
+  }
+}
+
+@media screen and (min-width: breakpoints.$lg) {
+  .header__container {
+    width: breakpoints.$lg;
+    margin: 0 auto;
+  }
+}

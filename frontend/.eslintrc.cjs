@@ -6,7 +6,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react-hooks/recommended',
     'plugin:@conarti/feature-sliced/rules',
-    'plugin:prettier/recommended',
+    'eslint-config-prettier',
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
@@ -17,22 +17,11 @@ module.exports = {
       },
     },
   },
-
   plugins: ['react-refresh'],
   rules: {
     'react-refresh/only-export-components': [
       'warn',
       { allowConstantExport: true },
-    ],
-    'prettier/prettier': 'error',
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'lf',
-        tabWidth: 2,
-        semi: false,
-        singleQuote: true,
-      },
     ],
   },
 }

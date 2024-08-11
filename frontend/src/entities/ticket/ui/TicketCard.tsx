@@ -1,5 +1,4 @@
 import React from 'react'
-import { Box, Button, Card, CardContent, Typography } from '@mui/material'
 
 type TicketCardProps = {
 	price: number
