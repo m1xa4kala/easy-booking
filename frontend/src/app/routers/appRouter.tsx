@@ -1,8 +1,10 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { RootLayout } from '@/app/layouts/RootLayout'
-import { Home } from '@/pages/home'
-import { Admin } from '@/pages/admin'
+import { RootLayout } from '../layouts/RootLayout'
+import { DashboardPage } from '@/pages/dashboard'
+import { HomePage } from '@/pages/home'
 import { Profile } from '@/pages/profile'
+import { Flights } from '@/widgets/flights'
+import { NotFoundPage } from '@/pages/notFound'
 
 export const appRouter = createBrowserRouter([
 	{
@@ -11,16 +13,26 @@ export const appRouter = createBrowserRouter([
 		children: [
 			{
 				path: '/',
-				element: <Home />,
+				element: <HomePage />,
 			},
 			{
 				path: '/admin',
-				element: <Admin />,
+				element: <DashboardPage />,
+				children: [
+					{
+						path: '/admin/flights',
+						element: <Flights />,
+					},
+				],
 			},
 			{
 				path: '/profile',
 				element: <Profile />,
 			},
 		],
+	},
+	{
+		path: '*',
+		element: <NotFoundPage />,
 	},
 ])

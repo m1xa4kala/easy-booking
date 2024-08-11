@@ -1,4 +1,3 @@
-import { RootState } from '@/app/store'
 import { createSelector } from '@reduxjs/toolkit'
 import { INavState } from './types'
 

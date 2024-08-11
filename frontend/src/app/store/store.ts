@@ -1,5 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
-import { navSlice } from '@/widgets/navigation'
+import { navSlice } from '@/features/toggleSidebar'
 
 const store = configureStore({
 	reducer: {

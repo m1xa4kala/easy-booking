@@ -1,9 +1,7 @@
-import { Box } from '@mui/material'
-
 export const Footer = () => {
 	return (
-		<Box>
+		<div>
 			<h1>Footer</h1>
-		</Box>
+		</div>
 	)
 }
