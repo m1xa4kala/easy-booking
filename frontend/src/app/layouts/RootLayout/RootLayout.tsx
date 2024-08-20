@@ -1,15 +1,13 @@
 import { Outlet } from 'react-router-dom'
 import { Footer } from '@/widgets/footer'
-import { CssBaseline } from '@mui/material'
-import { Navigation } from '@/widgets/navigation'
+import { Header } from '@/widgets/header'
 
 export const RootLayout = () => {
-	return (
-		<div>
-			<CssBaseline />
-			<Navigation />
-			<Outlet />
-			<Footer />
-		</div>
-	)
+  return (
+    <div>
+      <Header />
+      <Outlet />
+      <Footer />
+    </div>
+  )
 }
