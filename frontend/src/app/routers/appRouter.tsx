@@ -7,32 +7,32 @@ import { Flights } from '@/widgets/flights'
 import { NotFoundPage } from '@/pages/notFound'
 
 export const appRouter = createBrowserRouter([
-	{
-		path: '/',
-		element: <RootLayout />,
-		children: [
-			{
-				path: '/',
-				element: <HomePage />,
-			},
-			{
-				path: '/admin',
-				element: <DashboardPage />,
-				children: [
-					{
-						path: '/admin/flights',
-						element: <Flights />,
-					},
-				],
-			},
-			{
-				path: '/profile',
-				element: <Profile />,
-			},
-		],
-	},
-	{
-		path: '*',
-		element: <NotFoundPage />,
-	},
+  {
+    path: '/',
+    element: <RootLayout />,
+    children: [
+      {
+        path: '/',
+        element: <HomePage />,
+      },
+      {
+        path: '/admin',
+        element: <DashboardPage />,
+        children: [
+          {
+            path: '/admin/flights',
+            element: <Flights />,
+          },
+        ],
+      },
+      {
+        path: '/profile',
+        element: <Profile />,
+      },
+    ],
+  },
+  {
+    path: '*',
+    element: <NotFoundPage />,
+  },
 ])

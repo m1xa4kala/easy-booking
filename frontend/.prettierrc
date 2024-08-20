@@ -4,6 +4,6 @@
   "semi": false,
   "singleQuote": true,
   "arrowParens": "always",
-  "endOfLine": "lf",
+  "endOfLine": "crlf",
   "jsxSingleQuote": true
 }

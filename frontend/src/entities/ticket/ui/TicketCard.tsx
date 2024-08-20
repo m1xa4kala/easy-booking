@@ -1,5 +1,6 @@
 import React from 'react'
 import './ticketCard.scss'
+import { Button } from '@/shared/ui'
 
 type TicketCardProps = {
   price: number
@@ -45,7 +46,7 @@ export const TicketCard: React.FC<TicketCardProps> = ({
       </div>
       <div className='ticket__card-order'>
         <span className='order__places'>Мест осталось: {placesCount}</span>
-        <button className='order__button'>{price} ₽</button>
+        <Button>{price} ₽</Button>
       </div>
     </div>
   )

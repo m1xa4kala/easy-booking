@@ -5,9 +5,9 @@ import store from '../store/store'
 import { appRouter } from '../routers'
 
 export const Providers: React.FC = () => {
-	return (
-		<Provider store={store}>
-			<RouterProvider router={appRouter} />
-		</Provider>
-	)
+  return (
+    <Provider store={store}>
+      <RouterProvider router={appRouter} />
+    </Provider>
+  )
 }
