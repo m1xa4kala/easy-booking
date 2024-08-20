@@ -9,7 +9,7 @@ export const Sidebar: React.FC = () => {
   const isNavOpen = useAppSelector(selectIsNavOpen)
   return (
     <aside className={`${isNavOpen ? 'sidebar show_sidebar' : 'sidebar'}`}>
-      <div className="sidebar_container">
+      <div className='sidebar_container'>
         <SidebarContent />
       </div>
     </aside>

@@ -1,3 +1,3 @@
 export interface INavState {
-	isOpen: boolean
+  isOpen: boolean
 }
