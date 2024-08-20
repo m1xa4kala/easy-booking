@@ -4,7 +4,7 @@
   right: 0;
   width: 280px;
   height: 100%;
-  background: #4fa1ff;
+  background: var(--color-button);
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.199);
   transition: transform 0.3s ease-in-out;
   transform: translateX(280px);
@@ -18,3 +18,4 @@
   margin-top: 60px;
   padding: 0 20px;
 }
+
