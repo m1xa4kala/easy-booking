@@ -1,0 +1,35 @@
+$bg-light: #f0f0f0;
+$bg-dark: #141414;
+
+$text-light: #202020;
+$text-dark: #f0f0f0;
+
+$card-light: #fff;
+$card-dark: #1b1b1b;
+
+$primary-light: #ff1048;
+$primary-dark: #fa1f52;
+
+$button-light-hover: darken($primary-light, 5%);
+$button-dark-hover: desaturate($primary-dark, 15%);
+
+$header-light: #00000000;
+$header-dark: #00000000;
+
+html[data-theme='light'] {
+  --color-text: #{$text-light};
+  --color-background: #{$bg-light};
+  --color-card: #{$card-light};
+  --color-primary: #{$primary-light};
+  --color-button-hover: #{$button-light-hover};
+  --color-header: #{$header-light};
+}
+
+html[data-theme='dark'] {
+  --color-text: #{$text-dark};
+  --color-background: #{$bg-dark};
+  --color-card: #{$card-dark};
+  --color-primary: #{$primary-dark};
+  --color-button-hover: #{$button-dark-hover};
+  --color-header: #{$header-dark};
+}

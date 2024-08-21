@@ -4,7 +4,7 @@ import { Header } from '@/widgets/header'
 
 export const RootLayout = () => {
   return (
-    <div>
+    <div style={{ padding: '0 20px' }}>
       <Header />
       <Outlet />
       <Footer />

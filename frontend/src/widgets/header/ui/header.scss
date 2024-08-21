@@ -5,15 +5,15 @@
   display: flex;
   width: 100%;
   height: 60px;
-  background-color: #267dff;
+  background-color: var(--color-header);
   align-items: center;
+  margin-bottom: 30px;
 
   &__container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 10px;
     width: 100%;
-    padding: 0 20px;
   }
 
   &__logo {
@@ -26,7 +26,7 @@
   &__title {
     margin: auto 0;
     grid-column: 2/8;
-    color: #fff;
+    color: var(--color-text);
     width: max-content;
   }
 

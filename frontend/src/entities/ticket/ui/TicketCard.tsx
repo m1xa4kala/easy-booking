@@ -31,12 +31,12 @@ export const TicketCard: React.FC<TicketCardProps> = ({
     <div className='ticket__card'>
       <div className='ticket__card-header'>
         <div className='ticket__card-departure'>
-          <h3 className='departure__point'>{origin}</h3>
-          <h4 className='departure__time'>{departureTime}</h4>
+          <h2 className='departure__point'>{origin}</h2>
+          <h3 className='departure__time'>{departureTime}</h3>
         </div>
         <div className='ticket__card-destination'>
-          <h3 className='destination__point'>{destination}</h3>
-          <h4 className='destination__time'>{arrivalTime}</h4>
+          <h2 className='destination__point'>{destination}</h2>
+          <h3 className='destination__time'>{arrivalTime}</h3>
         </div>
       </div>
       <div className='ticket__card-info'>
