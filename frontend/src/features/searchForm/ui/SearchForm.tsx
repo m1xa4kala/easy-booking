@@ -19,8 +19,14 @@ export const SearchForm = () => {
   }
   return (
     <form className='search__form'>
-      <input type='text' placeholder='Откуда' id='from' />
-      <input type='text' placeholder='Куда' id='to' />
+      <div className='search__form-field'>
+        <input type='text' placeholder='Откуда' id='from' />
+        <span></span>
+      </div>
+      <div className='search__form-field'>
+        <input type='text' placeholder='Куда' id='to' />
+        <span></span>
+      </div>
       <div>
         <DatePicker
           locale={ru}
