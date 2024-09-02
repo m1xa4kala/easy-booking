@@ -25,18 +25,8 @@ export const SwitchTheme: React.FC = () => {
         onClick={handleToggle}
       >
         <span className='theme-slider'></span>
-        <FontAwesomeIcon
-          icon={faSun}
-          id='sun-icon'
-          color='#ffdd40'
-          width={15}
-        />
-        <FontAwesomeIcon
-          icon={faMoon}
-          id='moon-icon'
-          color='#2458c6'
-          width={15}
-        />
+        <FontAwesomeIcon icon={faSun} id='sun-icon' width={15} />
+        <FontAwesomeIcon icon={faMoon} id='moon-icon' width={15} />
       </button>
     </div>
   )

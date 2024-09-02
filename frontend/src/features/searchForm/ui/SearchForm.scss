@@ -1,0 +1,52 @@
+.search__form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 2px solid var(--color-primary);
+  margin-bottom: 20px;
+
+  .search__form-field {
+    position: relative;
+    display: flex;
+    span {
+      width: 0;
+      transition: width 0.3s ease-in-out;
+    }
+  }
+
+  input {
+    padding: 12px;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--color-text);
+    font-size: 1em;
+    border-radius: 4px;
+  }
+
+  input:focus + span {
+    position: absolute;
+    bottom: 0;
+    left: 2%;
+    width: 96%;
+    height: 2px;
+    background-color: var(--color-primary);
+    pointer-events: none;
+  }
+
+  button {
+    font-size: 1.1em;
+    border-radius: 0 0 8px 8px;
+    cursor: pointer;
+  }
+
+  .date-picker {
+    width: 100%;
+    font-size: 1em;
+    padding: 12px;
+    border: none;
+    outline: none;
+    background: none;
+    color: var(--color-text);
+  }
+}
