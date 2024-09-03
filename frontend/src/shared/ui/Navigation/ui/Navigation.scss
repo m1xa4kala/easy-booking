@@ -1,0 +1,12 @@
+.navigation {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 1.1em;
+    color: var(--color-text);
+  }
+  .active {
+    text-decoration: underline;
+  }
+}

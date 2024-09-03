@@ -3,6 +3,7 @@ $bg-dark: #141414;
 
 $text-light: #202020;
 $text-dark: #f0f0f0;
+$text-secondary: #7a828b;
 
 $card-light: #fff;
 $card-dark: #1b1b1b;
@@ -23,6 +24,8 @@ html[data-theme='light'] {
   --color-primary: #{$primary-light};
   --color-button-hover: #{$button-light-hover};
   --color-header: #{$header-light};
+
+  --color-text-secondary: #{$text-secondary};
 }
 
 html[data-theme='dark'] {
@@ -32,4 +35,6 @@ html[data-theme='dark'] {
   --color-primary: #{$primary-dark};
   --color-button-hover: #{$button-dark-hover};
   --color-header: #{$header-dark};
+
+  --color-text-secondary: #{$text-secondary};
 }
