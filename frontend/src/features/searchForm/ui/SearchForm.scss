@@ -1,52 +1,79 @@
+@use '@/app/styles/breakpoints';
+
 .search__form {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   border: 2px solid var(--color-primary);
   margin-bottom: 20px;
+}
 
-  .search__form-field {
-    position: relative;
-    display: flex;
-    span {
-      width: 0;
-      transition: width 0.3s ease-in-out;
-    }
+.search__form-field {
+  position: relative;
+  span {
+    width: 0;
+    transition: width 0.3s ease-in-out;
   }
+}
 
-  input {
-    padding: 12px;
-    border: none;
-    outline: none;
-    background: none;
-    color: var(--color-text);
-    font-size: 1em;
-    border-radius: 4px;
+.field__input-from,
+.field__input-to,
+.date-picker {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  outline: none;
+  background: none;
+  color: var(--color-text);
+  font-size: 1.1em;
+  border-radius: 4px;
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+input:focus + span {
+  position: absolute;
+  bottom: 0;
+  left: 2%;
+  width: 96%;
+  height: 2px;
+  background-color: var(--color-primary);
+  pointer-events: none;
+}
+
+.search__form-button {
+  font-size: 1.1em;
+  border-radius: 0 0 8px 8px;
+  cursor: pointer;
+}
+@media screen and (min-width: breakpoints.$sm) {
+  .search__form {
+    display: grid;
+    row-gap: 10px;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
-
-  input:focus + span {
-    position: absolute;
-    bottom: 0;
-    left: 2%;
-    width: 96%;
-    height: 2px;
-    background-color: var(--color-primary);
-    pointer-events: none;
+  .search__form-field input-from {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
   }
-
-  button {
-    font-size: 1.1em;
-    border-radius: 0 0 8px 8px;
-    cursor: pointer;
-  }
-
   .date-picker {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+  }
+  .search__form-button {
+    height: 100%;
+    border-radius: 0 0 8px 0;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+}
+
+@media screen and (min-width: breakpoints.$md) {
+  .search__form {
+    flex-flow: row nowrap;
     width: 100%;
-    font-size: 1em;
-    padding: 12px;
-    border: none;
-    outline: none;
-    background: none;
-    color: var(--color-text);
   }
 }
