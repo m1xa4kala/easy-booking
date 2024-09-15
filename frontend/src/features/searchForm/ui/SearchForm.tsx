@@ -19,28 +19,38 @@ export const SearchForm = () => {
   }
   return (
     <form className='search__form'>
-      <div className='search__form-field'>
-        <input type='text' placeholder='Откуда' id='from' />
-        <span></span>
-      </div>
-      <div className='search__form-field'>
-        <input type='text' placeholder='Куда' id='to' />
-        <span></span>
-      </div>
-      <div>
-        <DatePicker
-          locale={ru}
-          id='date'
-          startDate={new Date()}
-          selected={searchDate}
-          onChange={handleDateChange}
-          placeholderText='Когда'
-          minDate={new Date()}
-          dateFormat='dd.MM.yyyy'
-          className='date-picker'
+      <div className='search__form-field input-from'>
+        <input
+          className='field__input-from'
+          type='text'
+          placeholder='Откуда'
+          id='from'
         />
+        <span></span>
       </div>
-      <Button type='submit'>Найти</Button>
+      <div className='search__form-field input-to'>
+        <input
+          className='field__input-to'
+          type='text'
+          placeholder='Куда'
+          id='to'
+        />
+        <span></span>
+      </div>
+      <DatePicker
+        locale={ru}
+        id='date'
+        startDate={new Date()}
+        selected={searchDate}
+        onChange={handleDateChange}
+        placeholderText='Когда'
+        minDate={new Date()}
+        dateFormat='dd.MM.yyyy'
+        className='date-picker'
+      />
+      <Button className='search__form-button' type='submit'>
+        Найти
+      </Button>
     </form>
   )
 }

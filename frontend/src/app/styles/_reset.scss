@@ -131,10 +131,19 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
-
-a {
-  text-decoration: none;
+input {
+  border-radius: 0;
+  outline: none;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
   color: inherit;
-  cursor: pointer;
-  
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }

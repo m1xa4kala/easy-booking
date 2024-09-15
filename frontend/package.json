@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "prepare": "cd .. && husky ./frontend/.husky",
     "lint-staged": "lint-staged",
-    "prettier": "prettier --write ./src/**/*.{js,jsx,ts,tsx}"
+    "prettier": "prettier --write ./src/**/*.{js,jsx,ts,tsx,css,scss}"
   },
   "dependencies": {
     "@fortawesome/free-solid-svg-icons": "^6.6.0",

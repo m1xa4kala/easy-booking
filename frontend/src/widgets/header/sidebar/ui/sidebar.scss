@@ -8,15 +8,6 @@
   box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.199);
   transition: transform 0.3s ease-in-out;
   transform: translateX(280px);
-  z-index: 1000;
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    gap: 20px;
-    
-  }
 }
 
 .show_sidebar {
