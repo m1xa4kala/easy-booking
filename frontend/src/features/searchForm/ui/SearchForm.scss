@@ -1,6 +1,7 @@
 @use '@/app/styles/breakpoints';
 
 .search__form {
+  max-width: 1000px;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -27,6 +28,7 @@
   color: var(--color-text);
   font-size: 1.1em;
   border-radius: 4px;
+  z-index: 1;
 }
 
 .react-datepicker-wrapper {
@@ -51,29 +53,39 @@ input:focus + span {
 @media screen and (min-width: breakpoints.$sm) {
   .search__form {
     display: grid;
-    row-gap: 10px;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
+    row-gap: 10px;
   }
   .search__form-field input-from {
     grid-column: 1 / 2;
-    grid-row: 1 / 2;
+    grid-row: 1;
   }
-  .date-picker {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
+  .date__picker-field {
+    grid-column: 1 / 3;
+    grid-row: 2;
   }
   .search__form-button {
     height: 100%;
     border-radius: 0 0 8px 0;
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
+    grid-column: 1 / 3;
+    grid-row: 3;
   }
 }
 
 @media screen and (min-width: breakpoints.$md) {
   .search__form {
-    flex-flow: row nowrap;
-    width: 100%;
+    height: 58px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0;
+  }
+  .search__form-button {
+    display: block;
+    height: 100%;
+    flex: 0 0 150px;
+    border-radius: 0 8px 8px 0;
   }
 }

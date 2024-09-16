@@ -37,17 +37,19 @@ export const SearchForm = () => {
         />
         <span></span>
       </div>
-      <DatePicker
-        locale={ru}
-        id='date'
-        startDate={new Date()}
-        selected={searchDate}
-        onChange={handleDateChange}
-        placeholderText='Когда'
-        minDate={new Date()}
-        dateFormat='dd.MM.yyyy'
-        className='date-picker'
-      />
+      <div className='date__picker-field'>
+        <DatePicker
+          locale={ru}
+          id='date'
+          startDate={new Date()}
+          selected={searchDate}
+          onChange={handleDateChange}
+          placeholderText='Когда'
+          minDate={new Date()}
+          dateFormat='dd.MM.yyyy'
+          className='date-picker'
+        />
+      </div>
       <Button className='search__form-button' type='submit'>
         Найти
       </Button>
