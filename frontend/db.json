@@ -1,0 +1,26 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "email": "admin@admin.com",
+      "username": "admin",
+      "password": "admin",
+      "role": "admin"
+    }
+  ],
+"tickets": [
+    { 
+      "price": 1299,
+      "airline": "MoscowAir",
+      "origin": "Moscow", 
+      "destination": "SaintPetersburg", 
+      "departureTime": "2022-09-01T10:00:00.000Z", 
+      "arrivalTime": "2022-09-01T12:00:00.000Z", 
+      "duration": "1h 00m", 
+      "transfersCount": 0, 
+      "transferDuration": "0h 00m", 
+      "bus": "XD423J", 
+      "placesCount": 50
+    }
+  ]
+}
