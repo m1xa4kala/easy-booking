@@ -2,14 +2,15 @@ import { NavLink } from 'react-router-dom'
 import { LogoSvg } from '@/shared/assets'
 import { ToggleSidebar } from '@/features/toggleSidebar'
 import { Sidebar } from '../sidebar'
-import './header.scss'
 import { SwitchTheme } from '@/features/switchTheme'
+import { Container } from '@/shared/ui'
+import './header.scss'
 
 export const Header = () => {
   return (
     <>
       <header className='header'>
-        <div className='header__container'>
+        <Container className='header__container'>
           <NavLink to={'/'} color='#fff' className='header__logo'>
             <LogoSvg width={40} height={40} />
           </NavLink>
@@ -22,7 +23,7 @@ export const Header = () => {
           <div className='header__sidebar-toggle'>
             <ToggleSidebar />
           </div>
-        </div>
+        </Container>
       </header>
       <Sidebar />
     </>

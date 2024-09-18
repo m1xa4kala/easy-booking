@@ -8,7 +8,7 @@
   background-color: var(--color-card);
   color: var(--color-text);
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--color-shadow);
   padding: 20px;
   margin-bottom: 20px;
   gap: 20px;
@@ -107,6 +107,7 @@
     grid-column: 1/5;
     grid-row: 1;
   }
+
   .ticket__card-order {
     grid-column: 7/10;
     grid-row: 2;
