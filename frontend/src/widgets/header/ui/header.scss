@@ -24,6 +24,7 @@
   }
 
   &__title {
+    font-family: "Comfortaa", sans-serif;
     margin: auto 0;
     grid-column: 2/8;
     color: var(--color-text);
@@ -46,6 +47,7 @@
   .header__title {
     grid-column: 2/6;
   }
+
   .header__sidebar-toggle {
     grid-column: 12/13;
   }
@@ -55,6 +57,7 @@
   .header__title {
     grid-column: 2/6;
   }
+
   .header__sidebar-toggle {
     display: none;
   }
