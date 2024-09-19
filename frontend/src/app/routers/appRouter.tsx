@@ -7,6 +7,7 @@ import { Profile } from '@/pages/profile'
 import { Flights } from '@/widgets/flights'
 import { NotFoundPage } from '@/pages/notFound'
 import { SearchResults } from '@/widgets/searchResults'
+import { TicketInfo } from '@/pages/ticketInfo'
 
 export const appRouter = createBrowserRouter([
   {
@@ -26,6 +27,10 @@ export const appRouter = createBrowserRouter([
             element: <SearchResults />,
           },
         ],
+      },
+      {
+        path: '/ticket/:ticketId',
+        element: <TicketInfo />,
       },
       {
         path: '/admin',
