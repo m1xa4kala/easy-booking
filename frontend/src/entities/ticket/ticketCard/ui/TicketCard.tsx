@@ -1,13 +1,16 @@
 import React from 'react'
-import './ticketCard.scss'
-import { Button } from '@/shared/ui'
 import { Ticket } from '../../ticketList/model/types'
+import { Button } from '@/shared/ui'
+import { useNavigate } from 'react-router-dom'
+
+import './ticketCard.scss'
 
 type TicketCardProps = {
   ticket: Ticket
 }
 
 export const TicketCard: React.FC<TicketCardProps> = ({ ticket }) => {
+  const navigate = useNavigate()
   const departureTime = new Date(ticket.departureTime).toLocaleTimeString(
     'ru-RU',
     {
@@ -19,6 +22,10 @@ export const TicketCard: React.FC<TicketCardProps> = ({ ticket }) => {
     hour: '2-digit',
     minute: '2-digit',
   })
+
+  const onClickHandler = () => {
+    navigate('/ticket/' + ticket.id)
+  }
   return (
     <div className='ticket__card'>
       <div className='ticket__card-header'>
@@ -40,7 +47,7 @@ export const TicketCard: React.FC<TicketCardProps> = ({ ticket }) => {
         <span className='order__places'>
           Мест осталось: {ticket.placesCount}
         </span>
-        <Button>{ticket.price} ₽</Button>
+        <Button onClick={onClickHandler}>{ticket.price} ₽</Button>
       </div>
     </div>
   )
