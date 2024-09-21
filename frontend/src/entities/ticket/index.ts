@@ -1,7 +1,13 @@
-export { TicketList } from './ticketList'
+export {
+  TicketList,
+  fetchTicketList,
+  ticketListSlice,
+  selectTickets,
+} from './ticketList'
+export type { Ticket } from './ticketList'
 export { TicketCard } from './ticketCard'
-export { fetchTicketList } from './ticketList'
-export { ticketListSlice } from './ticketList'
-export { ticketInfoSlice } from './ticketFullInfo'
-export { TicketFullInfo } from './ticketFullInfo'
-export { fetchTicketInfo } from './ticketFullInfo'
+export {
+  ticketInfoSlice,
+  TicketFullInfo,
+  fetchTicketInfo,
+} from './ticketFullInfo'

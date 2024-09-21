@@ -30,4 +30,5 @@ export const ticketListSlice = createSlice({
   },
 })
 
+export const selectTickets = (state) => state.tickets
 export default ticketListSlice.reducer

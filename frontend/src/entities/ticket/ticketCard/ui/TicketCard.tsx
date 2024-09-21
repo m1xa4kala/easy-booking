@@ -4,6 +4,7 @@ import { Button } from '@/shared/ui'
 import { useNavigate } from 'react-router-dom'
 
 import './ticketCard.scss'
+import { formatDate } from '@/shared/helpers'
 
 type TicketCardProps = {
   ticket: Ticket
@@ -11,17 +12,9 @@ type TicketCardProps = {
 
 export const TicketCard: React.FC<TicketCardProps> = ({ ticket }) => {
   const navigate = useNavigate()
-  const departureTime = new Date(ticket.departureTime).toLocaleTimeString(
-    'ru-RU',
-    {
-      hour: '2-digit',
-      minute: '2-digit',
-    }
-  )
-  const arrivalTime = new Date(ticket.arrivalTime).toLocaleTimeString('ru-RU', {
-    hour: '2-digit',
-    minute: '2-digit',
-  })
+
+  const departureTime = formatDate(ticket.departureTime)
+  const arrivalTime = formatDate(ticket.arrivalTime)
 
   const onClickHandler = () => {
     navigate('/ticket/' + ticket.id)
