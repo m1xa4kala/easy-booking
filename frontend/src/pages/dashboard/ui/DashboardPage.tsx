@@ -1,10 +1,14 @@
+import { Container } from '@/shared/ui'
+import { DashboardNav } from '@/widgets/dashboardNav'
 import { Outlet } from 'react-router-dom'
 
 export const DashboardPage = () => {
   return (
     <div>
-      <h2>Admin Page</h2>
-      <Outlet />
+      <Container>
+        <DashboardNav />
+        <Outlet />
+      </Container>
     </div>
   )
 }

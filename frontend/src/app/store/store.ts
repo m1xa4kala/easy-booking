@@ -3,6 +3,7 @@ import { navSlice } from '@/features/toggleSidebar'
 import { authSlice } from '@/features/auth'
 import { themeSlice } from '@/features/switchTheme'
 import { ticketListSlice } from '@/entities/ticket'
+import { ticketInfoSlice } from '@/entities/ticket'
 
 const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
     auth: authSlice.reducer,
     theme: themeSlice.reducer,
     tickets: ticketListSlice.reducer,
+    ticketInfo: ticketInfoSlice.reducer,
   },
 })
 

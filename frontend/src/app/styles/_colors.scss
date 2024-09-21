@@ -16,6 +16,13 @@ $button-dark-hover: desaturate($primary-dark, 15%);
 $header-light: #00000000;
 $header-dark: #00000000;
 
+$shadow: inset 0 0 0.5px 1px hsla(0, 0%,
+    100%, 0.075),
+  0 0 0 1px hsla(0, 0%, 0%, 0.05),
+  0 0.3px 0.4px hsla(0, 0%, 0%, 0.02),
+  0 0.9px 1.5px hsla(0, 0%, 0%, 0.045),
+  0 3.5px 6px hsla(0, 0%, 0%, 0.09);
+
 html[data-theme='light'] {
   --color-text: #{$text-light};
   --color-background: #{$bg-light};
@@ -23,6 +30,7 @@ html[data-theme='light'] {
   --color-primary: #{$primary-light};
   --color-button-hover: #{$button-light-hover};
   --color-header: #{$header-light};
+  --color-shadow: #{$shadow};
 }
 
 html[data-theme='dark'] {
@@ -32,4 +40,5 @@ html[data-theme='dark'] {
   --color-primary: #{$primary-dark};
   --color-button-hover: #{$button-dark-hover};
   --color-header: #{$header-dark};
+  --color-shadow: #{$shadow};
 }

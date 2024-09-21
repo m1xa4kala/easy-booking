@@ -15,9 +15,7 @@ export const ticketListSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchTicketList.fulfilled, (state, action) => {
-        state.tickets = state.tickets
-          ? [...state.tickets, ...action.payload]
-          : action.payload
+        state.tickets = action.payload
         state.loading = false
         state.error = null
       })
@@ -32,4 +30,5 @@ export const ticketListSlice = createSlice({
   },
 })
 
+export const selectTickets = (state) => state.tickets
 export default ticketListSlice.reducer

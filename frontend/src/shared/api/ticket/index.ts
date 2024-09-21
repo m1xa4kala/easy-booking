@@ -1,1 +1,1 @@
-export { getTickets } from './ticket'
+export { getTickets, getTicketById } from './ticket'

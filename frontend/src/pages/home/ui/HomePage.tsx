@@ -4,12 +4,12 @@ import { fetchTicketList } from '@/entities/ticket'
 import { useAppDispatch, useAppSelector } from '@/shared/lib'
 
 export const HomePage = () => {
-  const dispath = useAppDispatch()
+  const dispatch = useAppDispatch()
   const tickets = useAppSelector((state) => state.tickets.tickets)
 
   React.useEffect(() => {
-    dispath(fetchTicketList())
-  }, [])
+    dispatch(fetchTicketList())
+  }, [dispatch])
 
   return (
     <div>

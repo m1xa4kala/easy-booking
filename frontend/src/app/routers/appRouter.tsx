@@ -4,9 +4,10 @@ import { SearchLayout } from '../layouts/SearchLayout'
 import { DashboardPage } from '@/pages/dashboard'
 import { HomePage } from '@/pages/home'
 import { Profile } from '@/pages/profile'
-import { Flights } from '@/widgets/flights'
 import { NotFoundPage } from '@/pages/notFound'
 import { SearchResults } from '@/widgets/searchResults'
+import { TicketInfo } from '@/pages/ticketInfo'
+import { DashboardTickets } from '@/pages/dashboard'
 
 export const appRouter = createBrowserRouter([
   {
@@ -28,13 +29,25 @@ export const appRouter = createBrowserRouter([
         ],
       },
       {
+        path: '/ticket/:ticketId',
+        element: <TicketInfo />,
+      },
+      {
         path: '/admin',
         element: <DashboardPage />,
         children: [
+          //{
+          //  path: '/admin/flights',
+          //  element: <DashboardFlights />,
+          //},
           {
-            path: '/admin/flights',
-            element: <Flights />,
+            path: '/admin/tickets',
+            element: <DashboardTickets />,
           },
+          //{
+          //  path: '/admin/users',
+          //  element: <DashboardUsers />,
+          //},
         ],
       },
       {

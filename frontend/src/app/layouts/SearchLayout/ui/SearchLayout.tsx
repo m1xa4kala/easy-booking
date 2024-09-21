@@ -1,14 +1,12 @@
 import { Outlet } from 'react-router-dom'
 import { SearchForm } from '@/features/searchForm'
-import './SearchLayout.scss'
+import { Container } from '@/shared/ui'
 
 export const SearchLayout = () => {
   return (
-    <>
-      <div className='layout__container'>
-        <SearchForm />
-        <Outlet />
-      </div>
-    </>
+    <Container>
+      <SearchForm />
+      <Outlet />
+    </Container>
   )
 }
