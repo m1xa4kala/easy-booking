@@ -56,7 +56,6 @@
       color: var(--color-text);
       resize: none;
     }
-
   }
 
   .contacts {
@@ -79,7 +78,6 @@
         margin-bottom: 5px;
       }
     }
-
   }
 
   &__copyright {
@@ -112,7 +110,6 @@
 
 @media screen and (min-width: breakpoints.$lg) {
   .footer {
-
     &__body {
       flex-direction: row;
     }
