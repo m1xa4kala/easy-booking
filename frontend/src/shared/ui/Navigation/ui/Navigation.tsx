@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 import './Navigation.scss'
 
@@ -8,19 +8,16 @@ export const Navigation: React.FC = () => {
     <nav className='navigation'>
       <ul className='navigation__list'>
         <li className='navigation__item'>
-          <Link to={'/'} className='navigation__link'>
-            Home
-          </Link>
+          <NavLink to={'/'}>Главная</NavLink>
         </li>
         <li className='navigation__item'>
-          <Link to={'/admin'} className='navigation__link'>
-            Dashboard
-          </Link>
+          <NavLink to={'/admin'}>Админ</NavLink>
         </li>
         <li className='navigation__item'>
-          <Link to={'/profile'} className='navigation__link'>
-            Profile
-          </Link>
+          <NavLink to={'/profile'}>Профиль</NavLink>
+        </li>
+        <li className='navigation__item'>
+          <NavLink to={'/favorites'}>Избранное</NavLink>
         </li>
       </ul>
     </nav>
