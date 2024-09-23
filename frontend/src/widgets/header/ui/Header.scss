@@ -31,6 +31,10 @@
     width: max-content;
   }
 
+  &__navigation {
+    display: none;
+  }
+
   &__sidebar-toggle {
     display: flex;
     align-items: center;
@@ -58,14 +62,6 @@
     grid-column: 2/6;
   }
 
-  .header__sidebar-toggle {
-    display: none;
-  }
-
-  .header__theme-toggle {
-    display: block;
-    margin: auto 0;
-  }
 }
 
 @media screen and (min-width: breakpoints.$lg) {
@@ -76,5 +72,19 @@
   .header__container {
     width: 1200px;
     margin: 0 auto;
+  }
+
+  .header__navigation {
+    display: flex;
+    align-items: center;
+  }
+
+  .header__sidebar-toggle {
+    display: none;
+  }
+
+  .header__theme-toggle {
+    display: block;
+    margin: auto 0;
   }
 }
