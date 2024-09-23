@@ -3,8 +3,9 @@ import { LogoSvg } from '@/shared/assets'
 import { ToggleSidebar } from '@/features/toggleSidebar'
 import { Sidebar } from '../sidebar'
 import { SwitchTheme } from '@/features/switchTheme'
-import { Container } from '@/shared/ui'
-import './header.scss'
+import { Container, Navigation } from '@/shared/ui'
+
+import './Header.scss'
 
 export const Header = () => {
   return (
@@ -17,6 +18,9 @@ export const Header = () => {
           <NavLink to={'/'} color='#fff' className='header__title'>
             <h1>Easy Booking</h1>
           </NavLink>
+          <div className='header__navigation'>
+            <Navigation />
+          </div>
           <div className='header__theme-toggle'>
             <SwitchTheme />
           </div>

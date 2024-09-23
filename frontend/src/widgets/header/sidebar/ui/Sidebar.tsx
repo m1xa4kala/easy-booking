@@ -11,8 +11,12 @@ export const Sidebar: React.FC = () => {
   return (
     <aside className={`${isNavOpen ? 'sidebar show_sidebar' : 'sidebar'}`}>
       <div className='sidebar_container'>
-        <SwitchTheme />
-        <Navigation />
+        <div className='sidebar__switch-theme'>
+          <SwitchTheme />
+        </div>
+        <div className='sidebar__navigation'>
+          <Navigation />
+        </div>
       </div>
     </aside>
   )
