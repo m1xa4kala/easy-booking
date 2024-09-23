@@ -1,7 +1,6 @@
 @use '@/app/styles/breakpoints';
 
 .navigation {
-
   &__list {
     display: flex;
     flex-direction: column;
@@ -9,8 +8,6 @@
     list-style: none;
     padding: 0;
     margin: 0;
-
-
   }
 
   &__item {

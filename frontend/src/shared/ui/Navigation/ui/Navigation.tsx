@@ -1,22 +1,26 @@
-import { NavLink } from 'react-router-dom'
+import React from 'react'
+import { Link } from 'react-router-dom'
 
 import './Navigation.scss'
 
-export const Navigation = () => {
+export const Navigation: React.FC = () => {
   return (
     <nav className='navigation'>
       <ul className='navigation__list'>
         <li className='navigation__item'>
-          <NavLink to='/'>Главная</NavLink>
+          <Link to={'/'} className='navigation__link'>
+            Home
+          </Link>
         </li>
         <li className='navigation__item'>
-          <NavLink to='/admin'>Админ</NavLink>
+          <Link to={'/admin'} className='navigation__link'>
+            Dashboard
+          </Link>
         </li>
         <li className='navigation__item'>
-          <NavLink to='/profile'>Профиль</NavLink>
-        </li>
-        <li className='navigation__item'>
-          <NavLink to='/favorits'>Избранное</NavLink>
+          <Link to={'/profile'} className='navigation__link'>
+            Profile
+          </Link>
         </li>
       </ul>
     </nav>
