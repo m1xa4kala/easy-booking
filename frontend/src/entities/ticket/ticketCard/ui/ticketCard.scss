@@ -1,0 +1,115 @@
+@use '@/app/styles/breakpoints';
+
+.ticket__card {
+  min-height: 100px;
+  max-width: 680px;
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  background-color: var(--color-card);
+  color: var(--color-text);
+  border-radius: 10px;
+  box-shadow: var(--color-shadow);
+  padding: 20px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.ticket__card-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  grid-column: 1/6;
+  grid-row: 1;
+
+  .ticket__card-departure {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+
+    .departure__time {
+      font-weight: 700;
+    }
+  }
+
+  .ticket__card-destination {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+
+    .destination__time {
+      font-weight: 700;
+    }
+  }
+}
+
+.ticket__card-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  grid-column: 5/10;
+  grid-row: 2;
+  font-size: 14px;
+
+  .info__duration {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .info__bus {
+    color: #7a828b;
+    font-weight: 500;
+  }
+
+  .info__airline {
+    color: #7a828b;
+    font-weight: 500;
+  }
+}
+
+.ticket__card-order {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+  grid-column: 1/10;
+  grid-row: 3;
+
+  .order__places {
+    font-weight: 700;
+    align-self: flex-end;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+}
+
+@media screen and (min-width: breakpoints.$sm) {
+  .ticket__card-header {
+    grid-column: 1/5;
+    grid-row: 1;
+  }
+
+  .ticket__card-info {
+    grid-column: 1/5;
+    grid-row: 2;
+  }
+
+  .ticket__card-order {
+    grid-column: 6/10;
+    grid-row: 2;
+  }
+}
+
+@media screen and (min-width: breakpoints.$md) {
+  .ticket__card-header {
+    grid-column: 1/5;
+    grid-row: 1;
+  }
+
+  .ticket__card-order {
+    grid-column: 7/10;
+    grid-row: 2;
+  }
+}

@@ -1,1 +1,1 @@
-export { SearchLayout } from './SearchLayout'
+export { SearchLayout } from './ui/SearchLayout'

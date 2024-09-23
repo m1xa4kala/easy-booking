@@ -7,9 +7,14 @@
   src: url('../../shared/assets/fonts/Comfortaa-VariableFont_wght.ttf');
 }
 
+@font-face {
+  font-family: 'Overpass', sans-serif;
+  src: url('../../shared/assets/fonts/Overpass-VariableFont_wght.ttf');
+}
+
 body {
   background-color: var(--color-background);
-  font-family: 'Comfortaa', sans-serif;
+  font-family: 'Overpass', sans-serif;
   font-size: 16px;
   transition: background-color 0.3s ease-in-out;
 }
