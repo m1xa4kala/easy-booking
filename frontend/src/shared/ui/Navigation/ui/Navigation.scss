@@ -1,3 +1,5 @@
+@use '@/app/styles/breakpoints';
+
 .navigation {
 
   &__list {
@@ -43,6 +45,32 @@
 
       &::before {
         background-color: var(--color-primary);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: breakpoints.$lg) {
+  .navigation {
+    display: flex;
+    align-items: center;
+
+    &__list {
+      flex-direction: row;
+      align-items: center;
+    }
+
+    &__item {
+      a {
+        font-size: 1em;
+
+        &::before {
+          display: none;
+        }
+      }
+
+      a.active {
+        margin-left: 0;
       }
     }
   }
