@@ -7,13 +7,13 @@ export const DashboardNav: React.FC = () => {
     <div className='dashboard-nav'>
       <ul className='dashboard-nav__list'>
         <li className='dashboard-nav__item'>
-          <NavLink to={'/admin/flights'}>Flights</NavLink>
+          <NavLink to={'/admin/flights'}>Рейсы</NavLink>
         </li>
         <li className='dashboard-nav__item'>
-          <NavLink to={'/admin/tickets'}>Tickets</NavLink>
+          <NavLink to={'/admin/tickets'}>Билеты</NavLink>
         </li>
         <li className='dashboard-nav__item'>
-          <NavLink to={'/admin/users'}>Users</NavLink>
+          <NavLink to={'/admin/users'}>Пользователи</NavLink>
         </li>
       </ul>
     </div>
