@@ -9,7 +9,7 @@ import java.util.UUID;
 @Setter
 public class FlightRun {
 
-    private UUID id;
+    private UUID flightRunId;
 
     private Bus bus;
 

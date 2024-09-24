@@ -9,8 +9,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
 
-import static org.springframework.data.jpa.domain.AbstractPersistable_.id;
-
 @Repository
 @RequiredArgsConstructor
 public class BusRepositoryImpl implements BusRepository {
@@ -18,7 +16,7 @@ public class BusRepositoryImpl implements BusRepository {
 
     @Override
     public Bus getBusById(UUID busId) {
-        String sql = "SELECT b.*, cc.* cc.id AS carrier_company_id " +
+        String sql = "SELECT b.*, b.id AS bus_id , cc.*, cc.id AS carrier_company_id " +
                 "FROM bus b LEFT JOIN carrier_company cc ON b.carrier_company_id = cc.id " +
                 "WHERE b.id = ?";
         return jdbcTemplate.queryForObject(sql, new Object[]{busId}, new BusRowMapper());
