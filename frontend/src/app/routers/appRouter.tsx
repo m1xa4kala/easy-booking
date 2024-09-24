@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom'
 import { RootLayout } from '../layouts/RootLayout'
 import { SearchLayout } from '../layouts/SearchLayout'
-import { DashboardPage } from '@/pages/dashboard'
+import { DashboardInfo, DashboardPage, DashboardUsers } from '@/pages/dashboard'
 import { HomePage } from '@/pages/home'
 import { Profile } from '@/pages/profile'
 import { NotFoundPage } from '@/pages/notFound'
@@ -36,18 +36,18 @@ export const appRouter = createBrowserRouter([
         path: '/admin',
         element: <DashboardPage />,
         children: [
-          //{
-          //  path: '/admin/flights',
-          //  element: <DashboardFlights />,
-          //},
+          {
+            path: '/admin',
+            element: <DashboardInfo />,
+          },
           {
             path: '/admin/tickets',
             element: <DashboardTickets />,
           },
-          //{
-          //  path: '/admin/users',
-          //  element: <DashboardUsers />,
-          //},
+          {
+            path: '/admin/users',
+            element: <DashboardUsers />,
+          },
         ],
       },
       {
