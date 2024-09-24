@@ -12,7 +12,7 @@ import java.util.UUID;
 
 public class Station {
 
-    private UUID Id;
+    private UUID stationId;
 
     private  String title;
 }
