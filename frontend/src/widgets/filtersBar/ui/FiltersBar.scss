@@ -1,0 +1,12 @@
+.filters-bar {
+  height: 60px;
+
+  .filters-list {
+    width: 80vw;
+    height: 100%;
+    padding: 0 15px;
+    display: flex;
+    overflow-x: scroll;
+    gap: 10px;
+  }
+}
