@@ -9,7 +9,7 @@ import java.util.UUID;
 @Setter
 public class CarrierCompany {
 
-    private UUID companyId;
+    private UUID Id;
 
     private String name;
 

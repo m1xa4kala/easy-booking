@@ -10,7 +10,7 @@ import java.util.UUID;
 @Setter
 public class Bus {
 
-    private UUID busId;
+    private UUID Id;
 
     private String title;
 

@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS "tickets"
     PRIMARY KEY ("id")
 );
 
-CREATE TABLE IF NOT EXISTS "flight_run"
+CREATE TABLE IF NOT EXISTS "flight_runs"
 (
     "id"        uuid   NOT NULL default (uuid_generate_v4()),
     "bus_id"    uuid   NOT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS "flight_run"
     PRIMARY KEY ("id")
 );
 
-CREATE TABLE IF NOT EXISTS "flight"
+CREATE TABLE IF NOT EXISTS "flights"
 (
     "id"             uuid NOT NULL default (uuid_generate_v4()),
     "name"           text NOT NULL,
@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS "flight"
     PRIMARY KEY ("id")
 );
 
-CREATE TABLE IF NOT EXISTS "route"
+CREATE TABLE IF NOT EXISTS "routes"
 (
     "id"                   uuid   NOT NULL default (uuid_generate_v4()),
     "departure_station_id" uuid   NOT NULL,
@@ -37,14 +37,14 @@ CREATE TABLE IF NOT EXISTS "route"
     PRIMARY KEY ("id")
 );
 
-CREATE TABLE IF NOT EXISTS "station"
+CREATE TABLE IF NOT EXISTS "stations"
 (
     "id"    uuid NOT NULL default (uuid_generate_v4()),
     "title" text NOT NULL,
     PRIMARY KEY ("id")
 );
 
-CREATE TABLE IF NOT EXISTS "flight_rout"
+CREATE TABLE IF NOT EXISTS "flight_routs"
 (
     "id"     uuid NOT NULL default (uuid_generate_v4()),
     "flight" uuid NOT NULL,
@@ -52,7 +52,7 @@ CREATE TABLE IF NOT EXISTS "flight_rout"
     PRIMARY KEY ("id")
 );
 
-CREATE TABLE IF NOT EXISTS "bus"
+CREATE TABLE IF NOT EXISTS "buses"
 (
     "id"                 uuid   NOT NULL default (uuid_generate_v4()),
     "title"              text   NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS "bus"
     PRIMARY KEY ("id")
 );
 
-CREATE TABLE IF NOT EXISTS "carrier_company"
+CREATE TABLE IF NOT EXISTS "carrier_companys"
 (
     "id"    uuid         NOT NULL default (uuid_generate_v4()),
     "name"  text         NOT NULL,
@@ -72,23 +72,23 @@ CREATE TABLE IF NOT EXISTS "carrier_company"
 );
 
 ALTER TABLE "tickets"
-    ADD CONSTRAINT "tickets_fk1" FOREIGN KEY ("flight_run_id") REFERENCES "flight_run" ("id");
-ALTER TABLE "flight_run"
-    ADD CONSTRAINT "flight_run_fk1" FOREIGN KEY ("bus_id") REFERENCES "bus" ("id");
+    ADD CONSTRAINT "tickets_fk1" FOREIGN KEY ("flight_run_id") REFERENCES "flight_runs" ("id");
+ALTER TABLE "flight_runs"
+    ADD CONSTRAINT "flight_run_fk1" FOREIGN KEY ("bus_id") REFERENCES "buses" ("id");
 
-ALTER TABLE "flight_run"
-    ADD CONSTRAINT "flight_run_fk3" FOREIGN KEY ("flight_id") REFERENCES "flight" ("id");
+ALTER TABLE "flight_runs"
+    ADD CONSTRAINT "flight_run_fk3" FOREIGN KEY ("flight_id") REFERENCES "flights" ("id");
 
-ALTER TABLE "route"
-    ADD CONSTRAINT "route_fk1" FOREIGN KEY ("departure_station_id") REFERENCES "station" ("id");
+ALTER TABLE "routes"
+    ADD CONSTRAINT "route_fk1" FOREIGN KEY ("departure_station_id") REFERENCES "stations" ("id");
 
-ALTER TABLE "route"
-    ADD CONSTRAINT "route_fk2" FOREIGN KEY ("arrival_station_id") REFERENCES "station" ("id");
+ALTER TABLE "routes"
+    ADD CONSTRAINT "route_fk2" FOREIGN KEY ("arrival_station_id") REFERENCES "stations" ("id");
 
-ALTER TABLE "flight_rout"
-    ADD CONSTRAINT "flight_rout_fk1" FOREIGN KEY ("flight") REFERENCES "flight" ("id");
+ALTER TABLE "flight_routs"
+    ADD CONSTRAINT "flight_rout_fk1" FOREIGN KEY ("flight") REFERENCES "flights" ("id");
 
-ALTER TABLE "flight_rout"
-    ADD CONSTRAINT "flight_rout_fk2" FOREIGN KEY ("rout") REFERENCES "route" ("id");
-ALTER TABLE "bus"
-    ADD CONSTRAINT "bus_fk3" FOREIGN KEY ("carrier_company_id") REFERENCES "carrier_company" ("id");
+ALTER TABLE "flight_routs"
+    ADD CONSTRAINT "flight_rout_fk2" FOREIGN KEY ("rout") REFERENCES "routes" ("id");
+ALTER TABLE "buses"
+    ADD CONSTRAINT "bus_fk3" FOREIGN KEY ("carrier_company_id") REFERENCES "carrier_companys" ("id");

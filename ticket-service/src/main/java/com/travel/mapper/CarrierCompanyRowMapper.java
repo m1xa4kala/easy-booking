@@ -11,7 +11,7 @@ public class CarrierCompanyRowMapper implements RowMapper<CarrierCompany> {
     @Override
     public CarrierCompany mapRow(ResultSet rs, int rowNum) throws SQLException {
         CarrierCompany carrierCompany = new CarrierCompany();
-        carrierCompany.setCompanyId(UUID.fromString(rs.getString("carrier_company_id")));
+        carrierCompany.setId(UUID.fromString(rs.getString("carrier_company_id")));
         carrierCompany.setName(rs.getString("name"));
         carrierCompany.setIcon(rs.getBytes("icon"));
         carrierCompany.setPhone(rs.getString("phone"));

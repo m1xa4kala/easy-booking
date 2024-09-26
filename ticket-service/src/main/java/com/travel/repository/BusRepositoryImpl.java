@@ -1,10 +1,12 @@
 package com.travel.repository;
 
 import com.travel.entity.Bus;
-import com.travel.mapper.BusRowMapper;
+import com.travel.mapper.BusRecordMapper;
 import com.travel.repository.api.BusRepository;
+import easy_booking.ticket_service.tables.Buses;
+import easy_booking.ticket_service.tables.records.BusesRecord;
 import lombok.RequiredArgsConstructor;
-import org.springframework.jdbc.core.JdbcTemplate;
+import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
@@ -12,13 +14,15 @@ import java.util.UUID;
 @Repository
 @RequiredArgsConstructor
 public class BusRepositoryImpl implements BusRepository {
-    private final JdbcTemplate jdbcTemplate;
+    private final DSLContext dsl;
+
+    private final BusRecordMapper busRecordMapper;
 
     @Override
     public Bus getBusById(UUID busId) {
-        String sql = "SELECT b.*, b.id AS bus_id , cc.*, cc.id AS carrier_company_id " +
-                "FROM bus b LEFT JOIN carrier_company cc ON b.carrier_company_id = cc.id " +
-                "WHERE b.id = ?";
-        return jdbcTemplate.queryForObject(sql, new Object[]{busId}, new BusRowMapper());
+        return dsl.selectFrom(Buses.BUSES)
+                .where(Buses.BUSES.ID.eq(busId))
+                .fetchAny()
+                .map(record -> busRecordMapper.map((BusesRecord) record));
     }
 }

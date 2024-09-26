@@ -14,7 +14,7 @@ public class BusRowMapper implements RowMapper<Bus> {
     public Bus mapRow(ResultSet rs, int rowNum) throws SQLException {
         CarrierCompanyRowMapper carrierCompanyRowMapper =new  CarrierCompanyRowMapper();
         Bus bus = new Bus();
-        bus.setBusId(UUID.fromString(rs.getString("bus_id")));
+        bus.setId(UUID.fromString(rs.getString("bus_id")));
         bus.setBusNumber(rs.getString("bus_number"));
         bus.setTitle(rs.getString("title"));
         bus.setPlacesCount(rs.getInt("places_count"));

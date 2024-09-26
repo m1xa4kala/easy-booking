@@ -37,6 +37,18 @@
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-meta</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.jooq</groupId>
+            <artifactId>jooq-codegen</artifactId>
+        </dependency>
 
     </dependencies>
     <build>
@@ -60,6 +72,45 @@
                     <compilerArgs>
                         <arg>-parameters</arg>
                     </compilerArgs>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.jooq</groupId>
+                <artifactId>jooq-codegen-maven</artifactId>
+                <version>${jooq.version}</version>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <jdbc>  <!-- указываем настройки базы -->
+                        <driver>org.postgresql.Driver</driver>
+                        <url>jdbc:postgresql://localhost:5433/easy_booking</url>
+                        <user>postgres</user>
+                        <password>123</password>
+                    </jdbc>
+                    <generator>
+                        <database>
+                            <includes>.*</includes>  <!-- включаемые подпакеты и файлы -->
+                            <excludes>  <!-- исключаемые подпакеты и файлы -->
+                                flyway_schema_history
+                            </excludes>
+                            <inputSchema>public</inputSchema>  <!-- схема -->
+                        </database>
+                        <generate>
+                            <records>true</records>
+                        </generate>
+                        <target>
+                            <!-- структура пакетов относительно основной директории -->
+                            <packageName>easy-booking.ticket-service</packageName>
+                            <!-- основная директория. Лучше хранить в target. -->
+                            <directory>target/generated-sources/jooq</directory>
+                        </target>
+                    </generator>
                 </configuration>
             </plugin>
 
