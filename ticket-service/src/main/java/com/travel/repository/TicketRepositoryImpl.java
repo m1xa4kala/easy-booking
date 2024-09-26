@@ -1,7 +1,6 @@
 package com.travel.repository;
 
 import com.travel.entity.Ticket;
-import com.travel.mapper.BusRowMapper;
 import com.travel.repository.api.TicketRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
