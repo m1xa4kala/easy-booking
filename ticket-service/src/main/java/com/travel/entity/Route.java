@@ -1,9 +1,5 @@
 package com.travel.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
-import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,12 +9,18 @@ import java.util.UUID;
 @Setter
 public class Route {
 
-    private UUID routId;
+    private UUID id;
 
     private Station departureStation;
 
     private Station arrivalStation;
 
-    private Integer duration;
+    private Long duration;
+    public Route(UUID id, Long duration, Station departureStation, Station arrivalStation) {
+        this.id = id;
+        this.duration = duration;
+        this.departureStation = departureStation;
+        this.arrivalStation = arrivalStation;
+    }
 
 }

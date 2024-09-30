@@ -8,10 +8,12 @@ import org.jooq.DSLContext;
 import org.springframework.stereotype.Repository;
 
 import java.util.UUID;
+
 @Repository
 @RequiredArgsConstructor
 public class CarrierCompanyRepositoryImpl implements CarrierCompanyRepository {
-    private  final DSLContext dsl;
+    private final DSLContext dsl;
+
     @Override
     public CarrierCompany getById(UUID id) {
         return dsl.selectFrom(CarrierCompanys.CARRIER_COMPANYS)

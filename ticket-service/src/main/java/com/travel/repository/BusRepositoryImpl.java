@@ -19,10 +19,11 @@ public class BusRepositoryImpl implements BusRepository {
     private final BusRecordMapper busRecordMapper;
 
     @Override
-    public Bus getBusById(UUID busId) {
+    public Bus getById(UUID busId) {
         return dsl.selectFrom(Buses.BUSES)
                 .where(Buses.BUSES.ID.eq(busId))
                 .fetchAny()
                 .map(record -> busRecordMapper.map((BusesRecord) record));
     }
+
 }

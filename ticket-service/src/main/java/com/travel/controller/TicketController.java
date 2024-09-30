@@ -2,6 +2,7 @@ package com.travel.controller;
 
 
 import com.travel.entity.Bus;
+import com.travel.entity.Flight;
 import com.travel.entity.Ticket;
 import com.travel.service.api.TicketService;
 
@@ -25,6 +26,13 @@ public class TicketController {
     public Bus getBusById(@RequestParam UUID id) {
         return ticketService.getBus(id);
     }
+
+    @Operation(summary = "Получить автобус по ID")
+    @GetMapping("/Flight")
+    public Flight getFlightById(@RequestParam UUID id) {
+        return ticketService.getFlight(id);
+    }
+
     @Operation(summary = "Получить автобус по ID")
     @GetMapping("/TicketId")
     public Ticket getTicketById(@RequestParam UUID id){
